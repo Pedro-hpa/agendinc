@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 20% 98%;
+    --foreground: 220 20% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 14%;
+
+    --primary: 168 60% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 30% 95%;
+    --secondary-foreground: 220 20% 14%;
+
+    --muted: 40 15% 93%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 30 80% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 89%;
+    --input: 40 15% 89%;
+    --ring: 168 60% 40%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom tokens */
+    --star: 45 93% 47%;
+    --success: 142 71% 45%;
+    --hero-gradient: linear-gradient(135deg, hsl(168 60% 40%), hsl(168 60% 30%));
+    --card-shadow: 0 2px 12px hsl(220 20% 14% / 0.06);
+    --card-shadow-hover: 0 8px 30px hsl(220 20% 14% / 0.12);
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 40 20% 95%;
+    --card: 220 20% 14%;
+    --card-foreground: 40 20% 95%;
+    --popover: 220 20% 14%;
+    --popover-foreground: 40 20% 95%;
+    --primary: 168 60% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 40 20% 95%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 30 80% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 168 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .marketplace-card {
+    @apply bg-card rounded-xl overflow-hidden transition-all duration-300 border border-border;
+    box-shadow: var(--card-shadow);
+  }
+  .marketplace-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    @apply -translate-y-1;
+  }
+}
+
+@layer utilities {
+  .text-star {
+    color: hsl(var(--star));
+  }
+  .bg-star {
+    background-color: hsl(var(--star));
+  }
+  .text-success {
+    color: hsl(var(--success));
+  }
+}
